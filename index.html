@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квіз: Загадковий космос</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Квіз: Загадковий космос</h1>
+  <p class="quiz-description">
+    Ласкаво просимо до захопливого космічного квізу! Протестуйте свої знання про загадки Всесвіту. Відповідайте на запитання, спостерігайте за анімаціями, і дізнайтеся, наскільки добре ви знайомі з космосом!
+  </p>
+  <button id="start-btn" class="btn">Почати</button>
+  <div id="quiz" class="hidden">
+    <div id="question-container">
+      <img id="question-image" class="question-image hidden" src="" alt="Зображення до питання">
+      <p id="question"></p>
+      <div id="answer-buttons" class="btn-grid"></div>
+    </div>
+    <button id="next-btn" class="btn hidden">Далі</button>
+  </div>
+  <div id="results" class="hidden">
+    <h2>Ваш результат:</h2>
+    <p id="score"></p>
+    <button id="restart-btn" class="btn">Почати заново</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
