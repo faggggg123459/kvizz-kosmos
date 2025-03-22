@@ -191,22 +191,4 @@ function restartQuiz() {
 
 
 
-let timeLeft = 60; // Початковий час у секундах
 
-// Функція для запуску таймера
-function startTimer() {
-    const timerElement = document.getElementById("timer");
-    const timerInterval = setInterval(() => {
-        timeLeft--;
-        timerElement.textContent = timeLeft; // Оновлення тексту таймера
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval); // Зупиняємо таймер
-            alert("Час вичерпано!");
-        }
-    }, 1000); // Оновлення щосекунди
-}
-
-// Запускаємо таймер автоматично при завантаженні сторінки
-window.onload = () => {
-    startTimer();
-};
