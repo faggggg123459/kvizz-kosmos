@@ -9,7 +9,7 @@
 <body>
   <h1>Квіз:ЗАГАДКОВИЙ КОСМОС!</h1>
   <p class="quiz-description">
-    Ласкаво просимо до захопливого космічного квізу! 
+    Ласкаво просимо до захопливого космічного квізу!
   </p>
   <button id="start-btn" class="btn">Почати</button>
   <div id="quiz" class="hidden">
@@ -28,60 +28,111 @@
   <script src="script.js"></script>
 
   <footer>Створено студїєю:zak.intellendgens </footer>
-</body>
-</html>
 
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопка Ссылки</title>
+    <title>Автоматичний таймер</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        .link-btn {
-            background: linear-gradient(135deg, #add8e6, #6a5acd);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            font-size: 16px;
-            text-decoration: none; /* Убираем подчеркивание */
-            display: inline-block;
-            transition: all 0.3s ease;
+            background-color: #f0f8ff;
+            margin-top: 50px;
         }
-        .link-btn:hover {
-            background: linear-gradient(135deg, #4682b4, #6a5acd);
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        .timer {
+            font-size: 2em;
+            color: #6a5acd;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 50px;">
-        <!-- Ссылочная кнопка -->
-        <a href="https://t.me/+MQ-SemMcroIxNzhi" class="link-btn" target="_blank">
-            Підтримка.
-        </a>
-    </div>
+    <h1>Таймер для тесту</h1>
+    <div class="timer" id="timer">Підготовка до тесту: 20 секунд</div>
+
+    <script>
+        let preparationTime = 20; // Час для підготовки (в секундах)
+        let testTime = 60; // Час для тесту (1 хвилина)
+        let timer; // Змінна для таймера
+
+        function startPreparationTimer() {
+            const timerElement = document.getElementById('timer');
+            timer = setInterval(() => {
+                timerElement.textContent = `Підготовка до тесту: ${preparationTime} секунд`;
+                preparationTime--;
+                if (preparationTime < 0) {
+                    clearInterval(timer);
+                    startTestTimer(); // Запуск основного таймера
+                }
+            }, 1000);
+        }
+
+        function startTestTimer() {
+            const timerElement = document.getElementById('timer');
+            timer = setInterval(() => {
+                const minutes = Math.floor(testTime / 60);
+                const seconds = testTime % 60;
+                timerElement.textContent = `Тест триває: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                testTime--;
+                if (testTime < 0) {
+                    clearInterval(timer);
+                    timerElement.textContent = "Тест завершено!";
+                }
+            }, 1000);
+        }
+
+        // Автоматичний запуск підготовчого таймера
+        startPreparationTimer();
+    </script>
+</body>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кнопка Ссылки</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f5;
+          margin: 0;
+          padding: 0;
+      }
+
+      .link-btn {
+          background: linear-gradient(135deg, #add8e6, #6a5acd);
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          font-size: 16px;
+          text-decoration: none; /* Убираем подчеркивание */
+          display: inline-block;
+          transition: all 0.3s ease;
+      }
+      .link-btn:hover {
+          background: linear-gradient(135deg, #4682b4, #6a5acd);
+          transform: scale(1.1);
+          box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;">
+      <!-- Ссылочная кнопка -->
+      <a href="https://t.me/+MQ-SemMcroIxNzhi" class="link-btn" target="_blank">
+          Підтримка.
+      </a>
+  </div>
+</body>
+
+
+
 </body>
 </html>
+
+
