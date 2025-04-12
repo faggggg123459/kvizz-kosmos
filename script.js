@@ -57,9 +57,9 @@ const questions = [
     image: 'https://th.bing.com/th/id/OIP.sl4P-yOi7mLPaoMpRDgnPAHaEK?w=309&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7',
     answers: [
       { text: '62', correct: true },
-      { text: '31', correct: false },
-      { text: '45', correct: false },
-      { text: '10', correct: false }
+      { text: '32', correct: false },
+      { text: '52', correct: false },
+      { text: '12', correct: false }
     ]
   },
   {
